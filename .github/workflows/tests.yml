@@ -1,0 +1,35 @@
+name: Run Tests
+##
+# This github workflow is used to run tests on all commits to the master branch.
+##
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  tests:
+    name: Unit Tests
+
+    strategy:
+      fail-fast: false
+      matrix:
+        tests:
+          - name: Py-Lint
+            command: pylint .
+          - name: Py-Flake8
+            command: python3 -m flake8
+          - name: Py-Test
+            command: python3 -m pytest
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install Dependencies
+        run: sudo apt-get update; sudo apt-get install -y python3-pytest python3-flake8 pylint
+
+      - name: Run Tests - ${{ matrix.tests.name }}
+        run: ${{ matrix.tests.command }}
