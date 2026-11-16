@@ -18,14 +18,14 @@ occurrence left in place identifies the token everywhere it is used.
 
 Every redaction is replaced with a bracketed token:
 
-- ``[redacted-pii]`` - anything under rule 1 with no token of its own
-- ``[redacted-employerN]`` - an organization the subject worked with (for or at)
-- ``[redacted-altorgN]`` - an organization named without having been worked for
-- ``[redacted-locationN]`` - a city, region or country
-- ``[redacted-schoolN]`` - an educational institution
-- ``[redacted-productN]`` - a product or service belonging to an employer
-- ``[redacted-date-<decay>]`` - a single date
-- ``[redacted-datespanNNmo-<decay>]`` - a date range
+- ``[pii]`` - anything under rule 1 with no token of its own
+- ``[employerN]`` - an organization the subject worked with (for or at)
+- ``[altorgN]`` - an organization named without having been worked for
+- ``[locationN]`` - a city, region or country
+- ``[schoolN]`` - an educational institution
+- ``[productN]`` - a product or service belonging to an employer
+- ``[date-<decay>]`` - a single date
+- ``[datespanNNmo-<decay>]`` - a date range
 
 ``N`` is assigned in order of first appearance. One entity holds one token
 throughout the document, and no two entities share a token.
@@ -70,8 +70,7 @@ document is sanitized on:
 - a year given without a month is read as that year's December
 
 **Rule 3** - an organization the subject worked for or at is employed, and
-takes ``[redacted-employerN]``; one that is only named takes
-``[redacted-altorgN]``:
+takes ``[employerN]``; one that is only named takes ``[altorgN]``:
 
 - a staffing agency and the client it placed the subject with are both employed
 - a brand, parent company, conference, volunteer organization or open source

@@ -59,7 +59,7 @@ dependencies() {
 # Install and load libraries using python3-venv
 venv() {
 	# Install presidio using pip
-	[ -d .venv ] || python3 -m venv .venv
+	[ -d .venv ] || python3 -m venv --system-site-packages .venv
 	. .venv/bin/activate
 	[ -d .venv/lib64/python3.14/site-packages/presidio_analyzer ] || \
 		pip install presidio-analyzer

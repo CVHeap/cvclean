@@ -9,7 +9,12 @@ import importlib
 
 # All supported and enabled filters, in the order they are applied
 ALL_FILTERS = [
+    'contacts',
+    'sentences',
+    'entities',
     'names',
+    'dates',
+    'numbers',
 ]
 
 
