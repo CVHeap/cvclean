@@ -40,26 +40,26 @@ class TestSentences:
 
     def test_ranking_phrase_is_removed(self):
         '''Check that a ranking leaves its article behind.'''
-        assert 'in the [redacted-pii] provider.' in self.result
+        assert 'in the [pii] provider.' in self.result
         assert "nation's largest" not in self.result
 
     def test_internal_team_is_removed(self):
         '''Check that a team the subject belonged to is a name.'''
-        assert 'on the [redacted-pii] team.' in self.result
+        assert 'on the [pii] team.' in self.result
         assert 'Database Operations' not in self.result
 
     def test_membership_programme_absorbs_the_project_name(self):
         '''Check that the longest phrase wins at a shared start.'''
-        assert 'into the [redacted-pii] team.' in self.result
+        assert 'into the [pii] team.' in self.result
         assert 'Ubuntu Community Membership' not in self.result
 
     def test_team_names_leave_the_project_name(self):
         '''Check that a span not starting at the project keeps it.'''
-        assert 'for the Ubuntu [redacted-pii] teams' in self.result
+        assert 'for the Ubuntu [pii] teams' in self.result
 
     def test_first_person_health_bullet_is_removed_whole(self):
         '''Check that an account of addiction leaves no remnant.'''
-        assert '- [redacted-pii]\n' in self.result
+        assert '- [pii]\n' in self.result
         assert 'addiction' not in self.result
 
     def test_membership_language_alone_is_not_enough(self):

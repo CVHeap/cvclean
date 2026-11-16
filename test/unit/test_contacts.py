@@ -33,7 +33,7 @@ class TestContacts:
 
     def test_whole_link_collapses_label_and_target_together(self):
         '''Check that nothing of a link survives its token.'''
-        assert '[redacted-pii] | [redacted-pii]' in self.result
+        assert '[pii] | [pii]' in self.result
         assert 'lnkd.url' not in self.result
         assert 'https' not in self.result
 
@@ -43,7 +43,7 @@ class TestContacts:
 
     def test_labels_stay_outside_the_token(self):
         '''Check that prose around a contact detail remains.'''
-        assert 'Phone: [redacted-pii] | Email: [redacted-pii]' in self.result
+        assert 'Phone: [pii] | Email: [pii]' in self.result
 
     def test_email_needs_no_valid_top_level_domain(self):
         '''Check that an unverifiable address is still removed.'''

@@ -17,7 +17,7 @@ Supported over 10,007 employees across more than 300 remote facilities.
 - Hardened IPv4/IPv6 endpoints with 2FA over T1 links for B2B clients
 - Delivered $800,000 in annual savings across 42 sites
 
-Tenure already reads as [redacted-datespan141mo-under5yr] here.
+Tenure already reads as [datespan141mo-under5yr] here.
 '''
 
 
@@ -59,4 +59,4 @@ class TestNumbers:
 
     def test_generated_metadata_is_untouched(self):
         '''Check that digits inside a redaction token are not reduced.'''
-        assert '[redacted-datespan141mo-under5yr]' in self.result
+        assert '[datespan141mo-under5yr]' in self.result

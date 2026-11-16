@@ -45,13 +45,13 @@ class TestDates:
 
     def test_open_range_ends_at_the_reference_month(self):
         '''Check that 'Present' resolves and the final month counts.'''
-        assert '· [redacted-datespan28mo-under5yr]' in self.result
+        assert '· [datespan28mo-under5yr]' in self.result
 
     def test_span_length_counts_both_endpoints(self):
         '''Check that a range reports an inclusive month count.'''
-        assert '[redacted-datespan25mo-under5yr]' in self.result
-        assert '[redacted-datespan14mo-over5yr]' in self.result
-        assert '[redacted-datespan60mo-over5yr]' in self.result
+        assert '[datespan25mo-under5yr]' in self.result
+        assert '[datespan14mo-over5yr]' in self.result
+        assert '[datespan60mo-over5yr]' in self.result
 
     def test_every_separator_delimits_a_range(self):
         '''Check that hyphen, dashes and 'to' all yield one span.'''
@@ -61,21 +61,21 @@ class TestDates:
 
     def test_numeric_months_resolve(self):
         '''Check that a slashed and a dashed date make one range.'''
-        assert '[redacted-datespan4mo-over10yr]' in self.result
+        assert '[datespan4mo-over10yr]' in self.result
 
     def test_abbreviated_month_resolves(self):
         '''Check that a three-letter month is read as a date.'''
-        assert '| [redacted-date-over10yr] |' in self.result
+        assert '| [date-over10yr] |' in self.result
 
     def test_year_without_month_reads_as_december(self):
         '''Check that a bare year is dated to the end of that year.'''
-        assert 'status in [redacted-date-over10yr] after' in self.result
+        assert 'status in [date-over10yr] after' in self.result
 
     def test_decay_steps_at_sixty_and_one_hundred_twenty_months(self):
         '''Check both decay boundaries from either side.'''
-        assert ('Boundary dates: [redacted-date-under5yr], '
-                '[redacted-date-over5yr], [redacted-date-over5yr], '
-                '[redacted-date-over10yr].') in self.result
+        assert ('Boundary dates: [date-under5yr], '
+                '[date-over5yr], [date-over5yr], '
+                '[date-over10yr].') in self.result
 
     def test_date_like_words_survive(self):
         '''Check that words resembling a date are not redacted.'''

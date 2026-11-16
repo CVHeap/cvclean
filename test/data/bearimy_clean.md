@@ -1,8 +1,8 @@
-# [redacted-pii]
+# [pii]
 
-[redacted-pii] | [redacted-pii] | [redacted-pii]
+[pii] | [pii] | [pii]
 
-Phone: [redacted-pii] | Email: [redacted-pii]
+Phone: [pii] | Email: [pii]
 
 **Architect and Full-Stack Developer**
 
@@ -63,11 +63,11 @@ Jack of all trades, *expert of few*, but often better than master of one.
 
 ## Professional Experience
 
-### [redacted-employer1], [redacted-location1]
+### [employer1], [location1]
 
-*Senior Systems Engineer* · Remote · [redacted-datespan28mo-under5yr]
+*Senior Systems Engineer* · Remote · [datespan28mo-under5yr]
 
-I joined [redacted-employer1] as the only Systems Engineer for [redacted-employer2], a sister company delivering high-speed fixed wireless internet to underserved residential areas. My position covered the breadth of system administration, network engineering, and security compliance needs that are common for Small and Medium Businesses (SMBs).
+I joined [employer1] as the only Systems Engineer for [employer2], a sister company delivering high-speed fixed wireless internet to underserved residential areas. My position covered the breadth of system administration, network engineering, and security compliance needs that are common for Small and Medium Businesses (SMBs).
 
 My primary responsibility was to support the Network Engineers, who were ultimately responsible for customer and employee support. This included reviewing RADIUS logs, deciphering MySQL schemas, and writing utilities to automate common networking tasks.
 
@@ -114,17 +114,17 @@ After one year, the only three servers remaining to be migrated were blocked bec
 - Maintained **RADIUS** services used for authenticating network devices and network engineers
 - Configured **host-level firewall**, improving security that enabled a complete network rebuild
 
-### [redacted-employer3], [redacted-location2] — via [redacted-employer4]
+### [employer3], [location2] — via [employer4]
 
-*Linux Desktop Engineer (Project Contract)* · Remote · [redacted-datespan25mo-under5yr]
+*Linux Desktop Engineer (Project Contract)* · Remote · [datespan25mo-under5yr]
 
-I was contracted, through [redacted-employer4], to design and implement a Linux Endpoint for developers who were creating autonomous driving software at [redacted-employer3] for brands including [redacted-altorg1], [redacted-altorg2], [redacted-altorg3], [redacted-altorg4], [redacted-altorg5], and [redacted-altorg6].
+I was contracted, through [employer4], to design and implement a Linux Endpoint for developers who were creating autonomous driving software at [employer3] for brands including [altorg1], [altorg2], [altorg3], [altorg4], [altorg5], and [altorg6].
 
 This project required identifying key stakeholders, gathering requirements, and designing a solution that improved the developer experience enough for them to embrace corporate security policies.
 
 The final laptop image was fully-automated and secure. It supported self-service provisioning and recovery, secure boot with Nvidia GPUs, full-disk encryption with employee smartcards, and automated updates integrated with existing Change Control processes.
 
-At the conclusion of this project, documentation and support were handed off to internal IT teams for ongoing support and maintenance. This included training sessions for support staff, documentation for end-users, escalation procedures for complex issues, and project documentation ready to present to the international [redacted-altorg7].
+At the conclusion of this project, documentation and support were handed off to internal IT teams for ongoing support and maintenance. This included training sessions for support staff, documentation for end-users, escalation procedures for complex issues, and project documentation ready to present to the international [altorg7].
 
 **Business Analysis & ITIL:**
 
@@ -164,11 +164,11 @@ At the conclusion of this project, documentation and support were handed off to 
 - Automatically revoked **Device Posture Checks** when certain actions were performed, requiring config sync
 - Integrated **antivirus** and **endpoint detection** software, working with Security Team to improve performance
 
-### [redacted-employer5], [redacted-location3]
+### [employer5], [location3]
 
-*Database Administrator / Site Reliability Engineer* · Remote · [redacted-datespan8mo-under5yr]
+*Database Administrator / Site Reliability Engineer* · Remote · [datespan8mo-under5yr]
 
-I was hired as a Site Reliability Engineer on the [redacted-pii] team to improve the reliability and performance of Big Data infrastructure supporting Advertising Technology. My team was responsible for maintaining high availability of MySQL and Hadoop clusters that processed millions of transactions per minute, requiring sub-millisecond response times and near-perfect uptime.
+I was hired as a Site Reliability Engineer on the [pii] team to improve the reliability and performance of Big Data infrastructure supporting Advertising Technology. My team was responsible for maintaining high availability of MySQL and Hadoop clusters that processed millions of transactions per minute, requiring sub-millisecond response times and near-perfect uptime.
 
 The primary goal for our team was maintaining critical servers and carefully testing changes that were requested by developers. This required a deep understanding of MySQL transactions, careful planning, and thorough testing to ensure that changes did not negatively impact overall database performance.
 
@@ -201,11 +201,11 @@ Using this approach, we were able to maintain non-stop recovery efforts while si
 - Created a **CI/CD pipeline** to automatically test configuration changes before deployment
 - Utilized Pull Requests to create an informal **change control process**, improving cross-team communication
 
-### [redacted-employer6], [redacted-location4]
+### [employer6], [location4]
 
-*Systems Engineer* · Remote · [redacted-datespan14mo-over5yr]
+*Systems Engineer* · Remote · [datespan14mo-over5yr]
 
-I was brought into [redacted-employer6], a Content Delivery Network (CDN) provider, to improve their configuration management system and assist with general system administration tasks.
+I was brought into [employer6], a Content Delivery Network (CDN) provider, to improve their configuration management system and assist with general system administration tasks.
 
 After a series of organizational restructures, my primary responsibility was to ensure passwords were being regularly rotated for all service accounts. This required auditing existing scripts to find hard-coded passwords and monitoring system logs to identify currently-active versions of user names.
 
@@ -218,9 +218,9 @@ After a series of organizational restructures, my primary responsibility was to 
 - Reviewed system logs and configuration to identify and report all currently-active service accounts
 - Regularly rotated passwords for all service accounts, ensuring compliance with security policies
 
-### [redacted-employer7], [redacted-location5]
+### [employer7], [location5]
 
-*Senior DevOps Engineer (Full-Time Employee / DevOps Consultant)* · Hybrid · [redacted-datespan60mo-over5yr]
+*Senior DevOps Engineer (Full-Time Employee / DevOps Consultant)* · Hybrid · [datespan60mo-over5yr]
 
 Consulting company that provided DevOps consulting services to a variety of clients.
 
@@ -230,15 +230,15 @@ Most of my time was spent augmenting internal IT teams with system automation an
 
 - Conducted "Technical Interviews" of fellow consultants as part of regular career growth evaluations
 - Wrote articles for company blog, focusing on safely applying strong security standards
-- Read further for client-specific accomplishments [[redacted-employer8], [redacted-employer9], [redacted-employer10]]
+- Read further for client-specific accomplishments [[employer8], [employer9], [employer10]]
 
-#### [redacted-employer8]
+#### [employer8]
 
-*FTE Consultant via [redacted-employer7]* · Remote · [redacted-datespan21mo-over5yr]
+*FTE Consultant via [employer7]* · Remote · [datespan21mo-over5yr]
 
-[redacted-employer8] was a multinational corporation that develops networking products.
+[employer8] was a multinational corporation that develops networking products.
 
-I was brought into an established team of 22 [redacted-employer7] consultants to resolve bugs in a custom configuration management solution and improve the success rate of system hardening scripts.
+I was brought into an established team of 22 [employer7] consultants to resolve bugs in a custom configuration management solution and improve the success rate of system hardening scripts.
 
 My most impactful contribution required deep troubleshooting skills to identify the root cause of frequent remediation failures that were threatening to cut the project entirely.
 
@@ -255,18 +255,18 @@ Using a cloned VM and careful analysis of logs, I was able to identify several u
 - Wrote patches to resolve bugs in custom management solution, resolving over 90% of remediation failures
 - Resolved performance issues in configuration scripts, eliminating over 80% of employee wait time
 - Assisted with development of CI/CD pipeline to automatically test all changes and prevent regressions
-- Continued supporting regular system administration tasks after the remaining [redacted-employer7] team was disbanded
+- Continued supporting regular system administration tasks after the remaining [employer7] team was disbanded
 
 **Software Development:**
 
 - Wrote a script to search user directories for **insecure SSH keys**, ensuring compliance with security policies
 - Updated key scanning script to support edge cases and **parallel execution**, enabling timely completion of scans
 
-#### [redacted-employer9]
+#### [employer9]
 
-*FTE Consultant via [redacted-employer7]* · Hybrid · [redacted-datespan26mo-over5yr]
+*FTE Consultant via [employer7]* · Hybrid · [datespan26mo-over5yr]
 
-[redacted-employer9] developed telepresence robots for business and personal use. I replaced another [redacted-employer7] consultant who was not meeting expectations because of my strong understanding of SaltStack and Linux internals, as well as a proven ability to work well with challenging clients.
+[employer9] developed telepresence robots for business and personal use. I replaced another [employer7] consultant who was not meeting expectations because of my strong understanding of SaltStack and Linux internals, as well as a proven ability to work well with challenging clients.
 
 I was primarily responsible for modernizing infrastructure, reducing security risks, and introducing redundancy to servers that drive customer-facing services.
 
@@ -294,13 +294,13 @@ During that migration, serious performance problems were discovered with authent
 - Designed and implemented an **in-memory cache** to improve authentication performance, preventing DoS
 - Replaced in-memory cache with **Redis**-backed solution, providing redundancy and improved performance
 
-#### [redacted-employer10]
+#### [employer10]
 
-*FTE Consultant via [redacted-employer7]* · On-Site · [redacted-datespan12mo-over10yr]
+*FTE Consultant via [employer7]* · On-Site · [datespan12mo-over10yr]
 
-[redacted-employer10] is a multinational media and entertainment corporation.
+[employer10] is a multinational media and entertainment corporation.
 
-Although I was part of a larger team of [redacted-employer7] consultants focused on a larger cleanup effort, my primary responsibility was to assist with system hardening and automation for an air-gapped subsidiary network.
+Although I was part of a larger team of [employer7] consultants focused on a larger cleanup effort, my primary responsibility was to assist with system hardening and automation for an air-gapped subsidiary network.
 
 My most significant contribution was reviewing CIS Level 2 benchmarks for Linux servers and creating automated solutions to enforce selected policies. This included writing Chef recipes to apply selected recommendations, as well as testing and validating each change to ensure no negative impact to production servers.
 
@@ -317,11 +317,11 @@ My most significant contribution was reviewing CIS Level 2 benchmarks for Linux 
 - Reviewed **CIS Level 2** benchmarks for Linux servers and implemented every possible recommendation
 - Documented every **policy** change, providing clear justification for any deviations from CIS recommendations
 
-### [redacted-employer11], [redacted-location6]
+### [employer11], [location6]
 
-*Senior Systems Administrator (SRE)* · On-Site · [redacted-datespan62mo-over10yr]
+*Senior Systems Administrator (SRE)* · On-Site · [datespan62mo-over10yr]
 
-I was the only Linux Administrator in the [redacted-pii] not-for-profit long-term healthcare provider, supporting over 10,000 employees across more than 300 remote Skilled Nursing Facilities with many more branch facilities.
+I was the only Linux Administrator in the [pii] not-for-profit long-term healthcare provider, supporting over 10,000 employees across more than 300 remote Skilled Nursing Facilities with many more branch facilities.
 
 My primary responsibility was maintaining all Linux servers, including application servers, print servers, file servers, and remote "boothost" servers, as well as most applications running on these servers.
 
@@ -378,9 +378,9 @@ I was extremely fortunate to work in an environment that encouraged deep learnin
 - Monitored database performance and worked with development teams to optimize queries
 - Worked with database engineer to refine complex queries needed to extract data from a large database
 
-### [redacted-employer12], [redacted-location6]
+### [employer12], [location6]
 
-*System Administrator / Website Developer* · On-Site · [redacted-datespan18mo-over10yr]
+*System Administrator / Website Developer* · On-Site · [datespan18mo-over10yr]
 
 Ten-person website development start-up company building websites with customer needs ranging from personalized themes to complex document sharing platforms.
 
@@ -419,17 +419,17 @@ I was responsible for all server administration tasks that supported a small dev
 
 - Coordinated with building network engineers, maintaining zone for secure internal development
 
-### [redacted-employer13], [redacted-location7]
+### [employer13], [location7]
 
-*Application Developer* · On-Site · [redacted-datespan11mo-over10yr]
+*Application Developer* · On-Site · [datespan11mo-over10yr]
 
 Consulting services for banks, with a focus on **risk assessments** and **penetration tests.**
 
 **Software Development:**
 
 - Wrote script to automate generation of penetration test reports, eliminating over 40 hours of effort per report
-- Assisted with development of [redacted-product1] utility, used to complete audits
-- Developed the first web-based version of [redacted-product1], eliminating many customer-visible performance issues
+- Assisted with development of [product1] utility, used to complete audits
+- Developed the first web-based version of [product1], eliminating many customer-visible performance issues
 - Created USB-based phishing utility that enabled auditors to safely identify users needing additional training
 - Wrote mailing list plugin for company website that yielded a 20% increase in customer response rate
 
@@ -441,9 +441,9 @@ Consulting services for banks, with a focus on **risk assessments** and **penetr
 
 ## Education
 
-### [redacted-school1], [redacted-location7]
+### [school1], [location7]
 
-*Bachelor of Science* in **Business and Computer Information Systems** · [redacted-datespan52mo-over10yr]
+*Bachelor of Science* in **Business and Computer Information Systems** · [datespan52mo-over10yr]
 
 **Minors:**
 
@@ -458,16 +458,16 @@ My primary drive for pursuing certifications is to meet employment and volunteer
 
 | Certification | Dates | Record ID |
 |---|---|---|
-| **SSCE** (SaltStack Certified Engineer) | [redacted-date-over10yr] | [redacted-pii] |
-| **GCP - Professional Cloud Architect** (Google Cloud Platform) | [redacted-datespan25mo-over5yr] | [redacted-pii] |
-| **CITI - Cancer GCP** (Good Clinical Practice) | [redacted-datespan71mo-under5yr] | [redacted-pii] |
-| **CITI - Investigators HSR** (Investigator Health Science Research) | [redacted-datespan71mo-under5yr] | [redacted-pii] |
-| **CITI - IRB HSR** (Institutional Review Board HSR) | [redacted-datespan71mo-under5yr] | [redacted-pii] |
-| **CITI - Cancer HSR** (Cancer Health Science Research) | [redacted-datespan71mo-under5yr] | [redacted-pii] |
+| **SSCE** (SaltStack Certified Engineer) | [date-over10yr] | [pii] |
+| **GCP - Professional Cloud Architect** (Google Cloud Platform) | [datespan25mo-over5yr] | [pii] |
+| **CITI - Cancer GCP** (Good Clinical Practice) | [datespan71mo-under5yr] | [pii] |
+| **CITI - Investigators HSR** (Investigator Health Science Research) | [datespan71mo-under5yr] | [pii] |
+| **CITI - IRB HSR** (Institutional Review Board HSR) | [datespan71mo-under5yr] | [pii] |
+| **CITI - Cancer HSR** (Cancer Health Science Research) | [datespan71mo-under5yr] | [pii] |
 
 ## Home Laboratory
 
-Further details and a *Network Diagram* are available at [redacted-pii]
+Further details and a *Network Diagram* are available at [pii]
 
 My home lab was born **from a need to test major changes** in a workplace where no test environment was currently possible. This lab was treated like an enterprise environment and grew into a full-scale, hybrid (multi-cloud) deployment with redundant services that were used by various open source projects.
 
@@ -492,9 +492,9 @@ My home lab was born **from a need to test major changes** in a workplace where 
 
 ## Presentations
 
-### [redacted-pii], [redacted-altorg8]
+### [pii], [altorg8]
 
-[redacted-date-over10yr]
+[date-over10yr]
 
 Presented my experience using SaltStack to bring order to a chaotic server environment. This included lessons learned, best practices, and practical advice for others attempting similar projects.
 
@@ -502,40 +502,40 @@ Presented my experience using SaltStack to bring order to a chaotic server envir
 
 Some of my most meaningful contributions have come from volunteer work:
 
-### [redacted-altorg9]
+### [altorg9]
 
-[redacted-datespan51mo-under5yr]
+[datespan51mo-under5yr]
 
 Non-profit organization that provides support and resources for individuals recovering from substance abuse and addiction. Focus on community outreach, education, and advocacy.
 
 - Mentored individuals in recovery, walking them through the early steps of sobriety
-- [redacted-pii]
+- [pii]
 
-### [redacted-altorg10] Institutional Review Board
+### [altorg10] Institutional Review Board
 
-[redacted-datespan51mo-under5yr]
+[datespan51mo-under5yr]
 
-[redacted-altorg10] is a regional cancer treatment center that serves patients across multiple states. The Institutional Review Board (IRB) is responsible for reviewing clinical research studies to ensure patient safety and regulatory compliance.
+[altorg10] is a regional cancer treatment center that serves patients across multiple states. The Institutional Review Board (IRB) is responsible for reviewing clinical research studies to ensure patient safety and regulatory compliance.
 
 - Served as non-scientific/unaffiliated patient-representative
-- Also served on Health Science IRB ([redacted-datespan27mo-under5yr])
+- Also served on Health Science IRB ([datespan27mo-under5yr])
 - Reviewed studies to ensure human subjects were properly protected (Belmont Report)
 - Became familiar with industry standards and regulations (FDA, OHRP, HIPAA, etc.)
 - Reviewed patient consent forms for completeness, accuracy, and clarity
 
-### [redacted-altorg11]
+### [altorg11]
 
-[redacted-datespan141mo-under5yr]
+[datespan141mo-under5yr]
 
-Non-profit organization that rescues, rehabilitates, and rehomes [redacted-altorg11] in need. Focus on education, responsible pet ownership, and breed-specific health issues.
+Non-profit organization that rescues, rehabilitates, and rehomes [altorg11] in need. Focus on education, responsible pet ownership, and breed-specific health issues.
 
-- Transported [redacted-altorg11] hundreds of miles with frequent comfort stops, delivering them to new homes
+- Transported [altorg11] hundreds of miles with frequent comfort stops, delivering them to new homes
 - Conducted home visits to ensure prospective adopters provided a safe and loving environment
 - Visited animals in shelters to provide socialization, exercise, and basic training
 
-### [redacted-altorg12]
+### [altorg12]
 
-[redacted-datespan20mo-over10yr]
+[datespan20mo-over10yr]
 
 Non-profit organization that packages and ships nutrition-packed dry meals to struggling communities both locally and internationally, with a focus on teaching children to enjoy helping others.
 
@@ -549,38 +549,38 @@ Non-profit organization that packages and ships nutrition-packed dry meals to st
 
 Well-known open source projects I have contributed to over the years include:
 
-### [redacted-altorg13]
+### [altorg13]
 
-[redacted-datespan206mo-under5yr]
+[datespan206mo-under5yr]
 
-[redacted-altorg13] is a widely-used Linux distribution known for its stability, security, and extensive software repository. I was granted [redacted-altorg13] Developer status in [redacted-date-over10yr] after years of maintaining packages, reviewing contributions, triaging bugs, assisting new developers, and participating in various teams.
+[altorg13] is a widely-used Linux distribution known for its stability, security, and extensive software repository. I was granted [altorg13] Developer status in [date-over10yr] after years of maintaining packages, reviewing contributions, triaging bugs, assisting new developers, and participating in various teams.
 
-- Obtained '**[redacted-altorg13] Developer, with uploading rights**' status in [redacted-date-over10yr], gaining unrestricted upload access
-- Maintained packages in [redacted-altorg13] repositories (nginx, tdc, etc.), ensuring **safe updates for millions of servers**
+- Obtained '**[altorg13] Developer, with uploading rights**' status in [date-over10yr], gaining unrestricted upload access
+- Maintained packages in [altorg13] repositories (nginx, tdc, etc.), ensuring **safe updates for millions of servers**
 - Joined "ftpteam", reviewing packages to ensure **open source standards** are maintained
-- Reviewed and sponsored packages on behalf of prospective [redacted-altorg13] Developers
+- Reviewed and sponsored packages on behalf of prospective [altorg13] Developers
 - Triaged and resolved bugs reported in **bug tracking system**, using bug tracker as a customer support tool
-- Uploaded packages to **[redacted-altorg13] build system**, including backports, and coordinated security updates
-- Verified OpenGPG identities for inclusion in the [redacted-altorg13] Keyring, ensuring a strong **web of trust**
+- Uploaded packages to **[altorg13] build system**, including backports, and coordinated security updates
+- Verified OpenGPG identities for inclusion in the [altorg13] Keyring, ensuring a strong **web of trust**
 
-### [redacted-altorg14]
+### [altorg14]
 
-[redacted-datespan161mo-over5yr]
+[datespan161mo-over5yr]
 
-[redacted-altorg14] is a popular Linux distribution based on Debian, known for its user-friendliness and regular release cycle. I was voted into the [redacted-pii] team in [redacted-date-over10yr] because of my consistent contributions to user support, local community groups, [redacted-altorg14] News content, and development of tools for community projects.
+[altorg14] is a popular Linux distribution based on Debian, known for its user-friendliness and regular release cycle. I was voted into the [pii] team in [date-over10yr] because of my consistent contributions to user support, local community groups, [altorg14] News content, and development of tools for community projects.
 
-- Obtained '**[redacted-altorg14] Member**' status in [redacted-date-over10yr]
+- Obtained '**[altorg14] Member**' status in [date-over10yr]
 - Supported users through **IRC support channels** and mailing lists, providing peer-based learning
 - Assisted in development of infrastructure for **Local Community teams**, improving community outreach
-- Worked with [redacted-altorg15] to develop new **branding guidelines**, creating consistency across community projects
+- Worked with [altorg15] to develop new **branding guidelines**, creating consistency across community projects
 - Developed tools for community projects, including **Drupal modules** that were used by the official website
-- Contributed **content and reviews** for the [redacted-altorg14] [redacted-pii] teams
+- Contributed **content and reviews** for the [altorg14] [pii] teams
 
-### [redacted-altorg16]
+### [altorg16]
 
-[redacted-datespan150mo-under5yr]
+[datespan150mo-under5yr]
 
-[redacted-altorg16] is an open-source configuration management and orchestration tool used to automate the deployment and management of IT infrastructure. I was an early adopter and became a contributor to the project so that my improvements could be reviewed by peers and included in future releases.
+[altorg16] is an open-source configuration management and orchestration tool used to automate the deployment and management of IT infrastructure. I was an early adopter and became a contributor to the project so that my improvements could be reviewed by peers and included in future releases.
 
 - Provided support via IRC channels, mailing lists, and GitHub issues
 - Worked with developers to resolve security and performance issues
@@ -588,27 +588,27 @@ Well-known open source projects I have contributed to over the years include:
 - Wrote first version of the "debconf" execution/state modules
 - Provided patches to fix issues with Proxmox, documentation, etc.
 
-### [redacted-altorg17]
+### [altorg17]
 
-[redacted-datespan172mo-under5yr]
+[datespan172mo-under5yr]
 
-[redacted-altorg17] is a high-performance web server and reverse proxy server known for its speed, scalability, and low resource consumption. I contributed to the [redacted-altorg17] community by maintaining Debian packages, managing community resources, and providing support to users.
+[altorg17] is a high-performance web server and reverse proxy server known for its speed, scalability, and low resource consumption. I contributed to the [altorg17] community by maintaining Debian packages, managing community resources, and providing support to users.
 
-- Built, packaged, and distributed the [redacted-altorg17] web server packages for Debian
-- Deployed and managed servers and software for the [redacted-altorg17] Wiki and Planet
+- Built, packaged, and distributed the [altorg17] web server packages for Debian
+- Deployed and managed servers and software for the [altorg17] Wiki and Planet
 - Built community projects, support system, and documentation repository
-- Served as Group Contact for all [redacted-altorg17] IRC channels on [redacted-altorg18]
-- Provided features/patches now included in [redacted-altorg17] source
+- Served as Group Contact for all [altorg17] IRC channels on [altorg18]
+- Provided features/patches now included in [altorg17] source
 - Served as a community point of contact
 
-### [redacted-altorg19]
+### [altorg19]
 
-[redacted-datespan27mo-over5yr]
+[datespan27mo-over5yr]
 
-[redacted-altorg19] is a lightweight, self-hosted Git service platform that provides a simple and efficient way to manage Git repositories. I spent hundreds of hours cleaning up the code base and providing patches to ensure all external libraries were documented and properly licensed.
+[altorg19] is a lightweight, self-hosted Git service platform that provides a simple and efficient way to manage Git repositories. I spent hundreds of hours cleaning up the code base and providing patches to ensure all external libraries were documented and properly licensed.
 
 - Reviewed all golang and javascript libraries used in the project and organized into vendor directories
 - Verified licenses for all external libraries, ensuring compliance with open source standards
-- Authored more than 200 packages in the Debian repository to support [redacted-altorg19] in the main archive
-- Created and maintained Debian packaging for [redacted-altorg19], ensuring safe and reliable installation for users
+- Authored more than 200 packages in the Debian repository to support [altorg19] in the main archive
+- Created and maintained Debian packaging for [altorg19], ensuring safe and reliable installation for users
 - Provided patches to resolve various bugs and issues reported by users
