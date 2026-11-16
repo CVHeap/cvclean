@@ -1,0 +1,117 @@
+#!/bin/sh
+##
+# Helpful developer commands/routines
+##
+set -e
+
+
+# Show usage and standard entry points
+show_help() {
+	t="$(printf '\t')"
+	cat <<-EOF
+	Run helpful developer commands
+
+	Usage: ./run <action> [options]
+
+	Options:
+	  -h${t}${t}Print this help text and exit
+	
+	Actions:
+	  dependencies${t}Install all runtime/test dependencies
+	  venv${t}${t}Install and load libraries using python3-venv
+	  tests${t}${t}Run all python and documentation tests
+	  clean${t}${t}Delete temporary data
+	EOF
+}
+
+# Merge environment with defaults and then override with cli arguments
+parse_options() {
+	DEV_ACTION="$(echo "${1:-show_help}" | tr '-' '_')"
+	while getopts 'h' OPT; do
+		case "$OPT" in
+			h) show_help; exit 1;;
+			*) die "Unexpected argument provided: '$OPT'";;
+		esac
+	done
+
+	# Safety Check: Ensure requested action is supported
+	grep "$DEV_ACTION() {" -q "$0" || die "Unsupported command: $DEV_ACTION"
+}
+
+# Should be invoked using "sudo ./run dependencies"
+dependencies() {
+	# Refresh Cache
+	apt-get update
+
+	# Application Dependencies:
+	apt-get install -y \
+		python3-nameparser \
+		python3-dateutil \
+		python3-venv
+
+	# Test Dependencies:
+	apt-get install -y \
+		pylint \
+		python3-flake8 \
+		python3-pytest
+}
+
+# Install and load libraries using python3-venv
+venv() {
+	# Install presidio using pip
+	[ -d .venv ] || python3 -m venv .venv
+	. .venv/bin/activate
+	[ -d .venv/lib64/python3.14/site-packages/presidio_analyzer ] || \
+		pip install presidio-analyzer
+	echo 'ACTIVATE USING: source .venv/bin/activate'
+}
+
+# Run unit tests
+tests() {
+	e=0
+
+	# Python
+	pylint . || e="$((e+1))"
+	python3 -m flake8 --exclude .venv || e="$((e+1))"
+	python3 -m pytest test || e="$((e+1))"
+
+	[ "$e" -gt 0 ] && die "$e of 3 Tests Failed"
+	echo 'All Tests Passed'
+	return $e
+}
+
+# Delete binaries and temporary data
+clean() {
+	# Dev things
+	find . -name '*.pyc' \
+		-o -type d -name '__pycache__' \
+		-o -type d -name '.pytest_cache' \
+		-o -type d -name '.venv' \
+		-exec rm -rf {} \;
+}
+
+
+##
+# Helper functions
+##
+
+# Print a formatted (critical) message and exit with status
+# Usage: die [exit_status] message
+die() {
+	# If first argument was an integer, use as exit_status
+	case "$1" in
+		(*[!0123456789]*) _exit_status=1;;
+		(*) _exit_status="$1"; shift;;
+	esac
+
+	printf '*** CRITICAL: %s ***\n' "$1"
+	exit "$_exit_status"
+}
+
+
+##
+# Parse and run command
+##
+
+parse_options "$@"
+"$DEV_ACTION"

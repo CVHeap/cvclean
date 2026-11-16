@@ -7,29 +7,19 @@ on:
   push:
     branches:
       - master
+  pull_request: []
 
 jobs:
 
   tests:
     name: Unit Tests
 
-    strategy:
-      fail-fast: false
-      matrix:
-        tests:
-          - name: Py-Lint
-            command: pylint .
-          - name: Py-Flake8
-            command: python3 -m flake8
-          - name: Py-Test
-            command: python3 -m pytest
-
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
 
       - name: Install Dependencies
-        run: sudo apt-get update; sudo apt-get install -y python3-pytest python3-flake8 pylint
+        run: sudo ./run dependencies
 
-      - name: Run Tests - ${{ matrix.tests.name }}
-        run: ${{ matrix.tests.command }}
+      - name: Run Tests
+        run: ./run tests
