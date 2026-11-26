@@ -164,10 +164,3 @@ submission date:
   decimal width
 - the month count inside a date token is generated metadata, and is not
   reduced
-
-Open Questions
---------------
-
-- Recency for the model: instead of per-span hints, one flag for the whole
-  journal, such as "many short recent jobs", could reach the fabrication check
-  without revealing any dates.
