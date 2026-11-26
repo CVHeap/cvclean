@@ -3,76 +3,120 @@ Sanitization Rules
 
 **Overview:**
 
-1. Any PII/PHI
-2. Mask dates and date ranges (<5yr, >10yr)
-3. Company names (employed vs. named)
-4. Non-employment organizations (redacted throughout localized section)
-5. Reduce all numbers to two significant digits
+1. Remove anything that identifies the subject (PII/PHI)
+2. Remove anything that reveals a protected class, while keeping the work
+3. Tokenize organizations, people and products, and remove places
+4. Collapse dates into durations and decay hints
+5. Remove version numbers, then reduce every other number to two significant
+   digits
+
+The goal is text that shows what the subject did without showing who they are.
+When a filter is unsure about a word, the word is replaced, because a leaked
+identifier costs more than a lost word.
+
+Input
+-----
+
+- A document can arrive with LF or CRLF line endings. Both give the same
+  output. The checksum is verified on the raw bytes first, and line endings
+  are normalized after that.
+- Section names are matched without regard to case or trailing whitespace, so
+  a renamed or reformatted section is still found.
+- The reference date for every decay hint is the submission date, passed in
+  with the document. The same document always gives the same output.
 
 Tokens
 ------
 
-Replace every occurrence of what a token stands for, including inside a
-bracketed aside, a list of names, or a longer name built around it. A single
-occurrence left in place identifies the token everywhere it is used.
-
 Every redaction is replaced with a bracketed token:
 
 - ``[pii]`` - anything under rule 1 with no token of its own
-- ``[employerN]`` - an organization the subject worked with (for or at)
-- ``[altorgN]`` - an organization named without having been worked for
-- ``[locationN]`` - a city, region or country
-- ``[schoolN]`` - an educational institution
-- ``[productN]`` - a product or service belonging to an employer
+- ``[person-<id>]`` - a person other than the subject, such as a manager or
+  client
+- ``[employer-<id>]`` - an organization the subject worked with (for or at)
+- ``[altorg-<id>]`` - an organization named without having been worked for
+- ``[school-<id>]`` - an educational institution
+- ``[product-<id>]`` - a product or service belonging to an employer
 - ``[date-<decay>]`` - a single date
 - ``[datespanNNmo-<decay>]`` - a date range
 
-``N`` is assigned in order of first appearance. One entity holds one token
-throughout the document, and no two entities share a token.
+``<id>`` is four characters from ``[a-z0-9]``, drawn at random with the
+document's checksum as the seed. The ids carry no order, so they do not show
+how many entities came before, and the same document always gets the same
+ids, so tests stay repeatable. One entity holds one id throughout the
+document, and no two entities share an id; a draw that repeats an id is drawn
+again. The ids mean nothing outside the document they came from. Replace every
+occurrence of what a token stands for, including inside a bracketed aside, a
+list of names, or a longer name built around it. A single occurrence left in
+place identifies the token everywhere it is used.
 
-``decay`` is one of ``under5yr``, ``over5yr`` or ``over10yr``, measured from
-the most recent date provided. This is further defined by **Rule 2**.
+``decay`` is one of ``under5yr``, ``over5yr`` or ``over10yr``. Decay hints are
+for the arithmetic stage only. The step that turns the cleaned text into spans
+moves each hint into a field next to its span and strips it from the text, so
+the model that reads the spans never sees it.
 
 Rule Definitions
 ----------------
 
-**Rule 1, removed** - PII/PHI covers the subject's name, contact details,
-profile links, addresses and record identifiers, and also:
+**Rule 1, removed** - anything that identifies the subject:
 
-- a sentence in which the subject describes their own health, addiction,
-  recovery or disability
-- the title of a presentation or publication by the subject, which identifies
-  its author
+- the subject's name, contact details, profile links, addresses and record
+  identifiers, such as certification or license numbers
+- email addresses, phone numbers with or without a country code, and bare
+  URLs or domains, as well as Markdown links
+- locations, such as a city, region or country, in a heading or in the text
+- job titles and seniority words such as "Senior" or "Lead". The search filter
+  handles titles, and the level comes from what the text says was done
 - the name of an internal team, department or program the subject belonged
   to, which places them inside an employer's structure
-- a product or service belonging to an employer
-- a ranking phrase ("the nation's largest") attached to an organization
+- a ranking or news phrase that points at one organization, such as "the
+  nation's largest" or "a cyberattack that made national news"
+- a detail distinctive enough to find the subject on its own, such as a unique
+  role in a public project
+
+**Rule 1, replaced with a description** - details that are also evidence:
+
+- the title of a presentation or publication by the subject becomes a
+  description of the work, such as "a conference talk on configuration
+  management", so the evidence stays and the title does not
 
 **Rule 1, kept** - context that carries no identity:
 
-- job titles and seniority
-- certification and credential names
+- certification and credential names, without their identifiers
 - standards, regulations and benchmarks
-- third-party technologies, tools and vendors the subject used
+- third-party technologies, tools and vendors the subject used. These are
+  matched against a maintained product list first, so a tool name such as
+  Jenkins or Kafka is never taken for a person or an organization
 - a counterpart group described by what it does rather than by name
 - the name of a team the subject worked with rather than belonged to
 - a superlative describing the subject's own role or work
 
-**Rule 2** - a date keeps a decay hint, measured against the reference date the
-document is sanitized on:
+**Rule 2** - protected classes are never included, and the text must not allow
+them to be inferred. This covers:
 
-- ``under5yr`` - ended less than 60 months before the reference date
-- ``over5yr`` - ended 60 to 119 months before
-- ``over10yr`` - ended 120 months or more before
-- ``NN`` - the length of a range in months, counting both the first month and
-  the last
-- an open range ends at the reference month, and that month counts
-- a year given without a month is read as that year's December
+- age, including stated ages and year counts such as "20 years of
+  experience", which are removed
+- health, addiction, recovery and disability
+- religion
+- parental status, including types of leave
+- sex and gender, including pronouns and affinity groups
+- race, ethnicity and national origin, including phrases like "native
+  speaker". The language itself is a skill and is kept
+
+When the class is part of the work itself, the work stays and only the
+affiliation goes. Volunteer work at a recovery center keeps what the subject
+did, such as "peer support" or "community outreach", while the description of
+the organization and any wording that ties the subject to the condition are
+removed. A sentence in which the subject describes their own protected detail
+is removed whole.
 
 **Rule 3** - an organization the subject worked for or at is employed, and
-takes ``[employerN]``; one that is only named takes ``[altorgN]``:
+takes ``[employer-<id>]``; one that is only named takes ``[altorg-<id>]``:
 
-- a staffing agency and the client it placed the subject with are both employed
+- a staffing agency and the client it placed the subject with are both
+  employed. Which placement belongs to which agency is resolved before dates
+  are replaced, from "via" qualifiers in the headings and from overlapping
+  date ranges, and the result is kept as a nesting relationship
 - a brand, parent company, conference, volunteer organization or open source
   project is named
 - a third-party organization is named where the subject held a role in it or
@@ -82,9 +126,9 @@ takes ``[employerN]``; one that is only named takes ``[altorgN]``:
 - one name can denote two entities, such as a parent and a brand, and each
   keeps its own token, deliberately not linked to the other
 
-**Rule 4** - a non-employment organization is redacted throughout its localized
-section, the section that documents or names it, and left alone elsewhere,
-where it reads as a technology or a tool:
+A non-employment organization is redacted throughout its localized section,
+the section that documents or names it, and left alone elsewhere, where it
+reads as a technology or a tool:
 
 - the name, its short form, and any run of its distinctive words are all
   redacted there
@@ -95,8 +139,35 @@ where it reads as a technology or a tool:
   ``web server``, ``repositories``) stays
 - matching is case-sensitive, so a lowercase descriptor is never absorbed
 
-**Rule 5** - every number keeps two significant digits, preserving separators
-and decimal width:
+**Rule 4** - dates become durations and decay hints, measured against the
+submission date:
 
-- the month count inside a date token is generated metadata, and is not reduced
-- includes version strings
+- ``under5yr`` - ended less than 60 months before the reference date
+- ``over5yr`` - ended 60 to 119 months before
+- ``over10yr`` - ended 120 months or more before
+- ``NN`` - the length of a range in months, counting both the first month and
+  the last
+- an open range ends at the reference month, and that month counts
+- a year given without a month is read as that year's December
+- a four-digit number is a date only when it is part of a range, follows a
+  month name, or sits in an entry heading. Elsewhere it is a number, so
+  "managed 2000 servers" stays a count
+- degrees keep their duration but no decay hint, because the years since
+  graduation are a direct stand-in for age
+
+**Rule 5** - numbers:
+
+- version numbers are handled first, by their own filter, and removed:
+  "Python 3.11" becomes "Python". A version dates the work, and the oldest one
+  in a journal points at when the career started
+- every other number keeps two significant digits, preserving separators and
+  decimal width
+- the month count inside a date token is generated metadata, and is not
+  reduced
+
+Open Questions
+--------------
+
+- Recency for the model: instead of per-span hints, one flag for the whole
+  journal, such as "many short recent jobs", could reach the fabrication check
+  without revealing any dates.

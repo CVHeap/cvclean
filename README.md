@@ -10,11 +10,12 @@ This allows us to focus on high quality matches without sacrificing privacy.
 Sanitization
 ------------
 
-1. Any PII/PHI
-2. Mask dates and date ranges (<5yr, >10yr)
-3. Company names (employed vs. named)
-4. Non-employment organizations (redacted throughout localized section)
-5. Reduce all numbers to two significant digits
+1. Remove anything that identifies the subject (PII/PHI)
+2. Remove anything that reveals a protected class, while keeping the work
+3. Tokenize organizations, people and products, and remove places
+4. Collapse dates into durations and decay hints
+5. Remove version numbers, then reduce every other number to two significant
+   digits
 
 See [Sanitization Rules](./RULES.md) for complete details.
 
