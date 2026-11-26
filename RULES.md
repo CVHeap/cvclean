@@ -54,10 +54,10 @@ occurrence of what a token stands for, including inside a bracketed aside, a
 list of names, or a longer name built around it. A single occurrence left in
 place identifies the token everywhere it is used.
 
-``decay`` is one of ``under5yr``, ``over5yr`` or ``over10yr``. Decay hints are
-for the arithmetic stage only. The step that turns the cleaned text into spans
-moves each hint into a field next to its span and strips it from the text, so
-the model that reads the spans never sees it.
+``decay`` is one of ``under5yr``, ``over5yr`` or ``over10yr``. Decay hints stay
+in the cleaned text. The scorecard strips them as the first step of splitting
+spans, so the smallest-unit prompts (one span, one bucket) never see them,
+while the position-level questions that come later can use them.
 
 Rule Definitions
 ----------------
