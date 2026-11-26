@@ -11,8 +11,12 @@ Sanitization Rules
    digits
 
 The goal is text that shows what the subject did without showing who they are.
-When a filter is unsure about a word, the word is replaced, because a leaked
-identifier costs more than a lost word.
+A capitalized word or phrase inside a sentence that is not on the product
+list and is not a name already known from the headings is treated as a name,
+and replaced with ``[pii]``. ``[pii]`` is the same in every journal and
+carries no gender or origin, so a wrong guess costs a word of evidence rather
+than adding a bias. How much evidence this removes is measured by the
+evidence-loss test in the scorecard spec.
 
 Input
 -----
@@ -74,11 +78,12 @@ Rule Definitions
 - a detail distinctive enough to find the subject on its own, such as a unique
   role in a public project
 
-**Rule 1, replaced with a description** - details that are also evidence:
+**Rule 1, replaced with a label** - details that are also evidence:
 
-- the title of a presentation or publication by the subject becomes a
-  description of the work, such as "a conference talk on configuration
-  management", so the evidence stays and the title does not
+- the title of a presentation or publication by the subject is replaced with
+  a fixed label taken from the section it sits in, ``a conference talk`` or
+  ``a publication``. The label shows that the work exists and keeps nothing
+  from the title, and no model writes it
 
 **Rule 1, kept** - context that carries no identity:
 
@@ -91,17 +96,23 @@ Rule Definitions
 - the name of a team the subject worked with rather than belonged to
 - a superlative describing the subject's own role or work
 
-**Rule 2** - protected classes are never included, and the text must not allow
-them to be inferred. This covers:
+**Rule 2** - protected classes are removed, and the text must not allow them
+to be inferred. They include:
 
-- age, including stated ages and year counts such as "20 years of
-  experience", which are removed
+- age
 - health, addiction, recovery and disability
 - religion
-- parental status, including types of leave
-- sex and gender, including pronouns and affinity groups
-- race, ethnicity and national origin, including phrases like "native
-  speaker". The language itself is a skill and is kept
+- parental status
+- sex and gender
+- race, ethnicity and national origin
+
+Wording that points at one of them is removed too:
+
+- stated ages and year counts, such as "20 years of experience"
+- types of leave, pronouns and affinity groups
+- phrases such as "native speaker"
+
+A language itself is a skill and is kept.
 
 When the class is part of the work itself, the work stays and only the
 affiliation goes. Volunteer work at a recovery center keeps what the subject
